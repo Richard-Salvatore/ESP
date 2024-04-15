@@ -143,13 +143,6 @@ if EspSettings.Highlights == nil then
 	bind.OnInvoke = function()
 		setclipboard("https://pastebin.com/raw/5zw0rLH9")
 	end
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "Universal Esp",
-		Text = "Please update your script!",
-		Duration = 5,
-		Button1 = "Get Latest Script",
-		Callback = bind
-	})
 	return
 end
 getgenv().EspSettings.Names.OutlineThickness = 0 -- to make setall work
