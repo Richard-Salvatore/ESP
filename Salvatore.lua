@@ -49,7 +49,7 @@ if not EspSettings then
 			}
 		},
 		Boxes = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(255,255,255),
 			UseTeamColor = true,
@@ -60,7 +60,7 @@ if not EspSettings then
 			Thickness = 1
 		},
 		Tracers = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(255,255,255),
 			UseTeamColor = true,
@@ -72,7 +72,7 @@ if not EspSettings then
 			Thickness = 1
 		},
 		Names = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(255,255,255),
 			UseTeamColor = true,
@@ -88,7 +88,7 @@ if not EspSettings then
 			HealthDataType = "Percentage" -- "Percentage" or "Value"
 		},
 		Skeletons = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(255,255,255),
 			UseTeamColor = true,
@@ -99,7 +99,7 @@ if not EspSettings then
 			Thickness = 1
 		},
 		HealthBars = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(0,255,0),
 			UseTeamColor = true,
@@ -111,7 +111,7 @@ if not EspSettings then
 			OutlineBarOnly = true
 		},
 		HeadDots = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(255,255,255),
 			UseTeamColor = true,
@@ -124,7 +124,7 @@ if not EspSettings then
 			Scale = 1
 		},
 		LookTracers = {
-			Enabled = true,
+			Enabled = false,
 			Transparency = 1,
 			Color = Color3.fromRGB(255,255,255),
 			UseTeamColor = true,
@@ -143,19 +143,11 @@ if EspSettings.Highlights == nil then
 	bind.OnInvoke = function()
 		setclipboard("https://pastebin.com/raw/5zw0rLH9")
 	end
-	game:GetService("StarterGui"):SetCore("SendNotification",{
-		Title = "Universal Esp",
-		Text = "Please update your script!",
-		Duration = 5,
-		Button1 = "Get Latest Script",
-		Callback = bind
-	})
-	return
 end
 getgenv().EspSettings.Names.OutlineThickness = 0 -- to make setall work
 
 if not Drawing then
-	game:GetService("Players").LocalPlayer:Kick("\n\nUniversal Esp\nYour exploit does not have a Drawing Library!\n")
+	game:GetService("Players").LocalPlayer:Kick("\nYour exploit does not have a drawing library.")
 	return
 end
 if UESP then
@@ -259,7 +251,7 @@ if (GameId == gids.pf) or (GameId == gids.pft) or (GameId == gids.pfu) then
 	if require == nil then
 		setclipboard('loadstring(game:HttpGet("https://raw.githubusercontent.com/Spoorloos/scripts/main/pf-actor-bypass.lua"))()')
 		local a = Instance.new("Message", game.CoreGui)
-		a.Text = "-- Universal Esp Notice --\n\nA script has been copied to your clipboard.\nPlease put this script in your exploit's autoexec folder and rejoin the game.\n(this script is required to bypass the new update)\n\nbypass was created by Spoorloos"
+		a.Text = "\nA script has been copied to your clipboard.\nPlease put this script in your exploit's autoexec folder and rejoin the game.\n(this script is required to bypass the new update.)"
 		return
 	else
 		local _cache = rawget(debug.getupvalue(require, 1), "_cache")
